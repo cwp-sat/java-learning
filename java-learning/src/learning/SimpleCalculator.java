@@ -1,3 +1,5 @@
+package learning;
+
 import java.util.Scanner;
 
 public class SimpleCalculator {
@@ -18,8 +20,11 @@ public class SimpleCalculator {
         else if (ch1=='*') {
             System.out.println("answer is "+(num1*num2));
         }
-        else if (ch1=='/') {
-            System.out.println("answer is "+(num1/num2));
+        else if (ch1 == '/') {
+            if (num2 == 0){
+                System.out.println("除数不能为0");
+            }else
+                System.out.println("answer is "+(num1/num2));
         }
     }
 }
