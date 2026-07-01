@@ -14,15 +14,27 @@ public class PrimeNumberDetermination {
             System.out.println("You have logged out");
             break;
         }
-        boolean isPrime = true;
-        for(int i=2;i<n;i++){
-            if(n%i==0){
-             isPrime=true;
-             break;
-            }
-            isPrime=false;
+        if(n<=1){
+            System.out.println(n + " is not a prime number");
+            continue;  // 跳过本次循环，继续让用户输入
         }
-        if(!isPrime){
+        boolean isPrime = true;
+//        for(int i=2;i<n;i++){
+//            if(n%i==0){
+//             isPrime=false;
+//             break;
+//            }
+//            isPrime=true;
+//        }
+//            优化
+        int limit = (int)Math.sqrt(n);
+        for (int i=2;i<=limit;i++){
+            if(n%i==0){
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime){
             System.out.println(n+" is a prime number");
         }else {
             System.out.println(n+" is not a prime number");
